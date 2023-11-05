@@ -6,3 +6,6 @@ class RegistrationLocators:
     registration_password_id = "user[password]"
     terms_checkbox_id = "user[terms]"
     registration_submit_button_xpath = "//div/button[@class='button button-primary g-recaptcha']"
+    terms_of_use_link_text = "Terms of Use"
+    privacy_policy_link_text = "Customer Privacy Policy"
+    error_list_xpath = "//ul/li[@class='form-error__list-item']"
