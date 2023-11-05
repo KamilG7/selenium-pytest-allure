@@ -50,7 +50,7 @@ class ProfessionalServices:
 
     @allure.step("Cheating captcha")
     def captcha_solver(self):
-        self.driver.find_element(By.ID, ProfessionalServicesLocators.captcha_id).click()
+        time.sleep(10)
         allure.attach(self.driver.get_screenshot_as_png(), name="Captcha attempt",
                       attachment_type=AttachmentType.PNG)
 
