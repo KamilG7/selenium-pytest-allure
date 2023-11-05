@@ -13,3 +13,7 @@ class RegistrationLocators:
     user_drop_xpath = "//li/button[@class='dropdown__toggle-button']"
     sign_out_xpath = "//a[contains(text(), 'Sign Out')]"
     sign_in_xpath = "//a[contains(text(), 'Sign In')]"
+
+class MainSiteLocators:
+
+    main_site_header_xpath = "//hi/span[contains(text(), 'Master test Automation')]"

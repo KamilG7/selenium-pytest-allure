@@ -11,7 +11,6 @@ password = "StrongPassword123"
 incorrect_email = "xxx.com"
 weak_password = "xxx"
 
-
 @pytest.mark.usefixtures("setup")
 class TestRegistration:
 
