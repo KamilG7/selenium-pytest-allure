@@ -28,3 +28,4 @@ class LoginPageLocators:
     forgot_password_email_id = "user[email]"
     forgot_password_info_xpath = "//h2[@class='password-reset__heading']"
     forgot_password_submit_name = "commit"
+    error_list_xpath = "//li[@class='form-error__list-item']"

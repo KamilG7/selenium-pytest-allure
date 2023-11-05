@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from locators.locators import LoginPageLocators
 
 
-class RegistrationPage:
+class LoginPage:
 
     def __init__(self, driver):
         self.driver = driver
@@ -19,7 +19,7 @@ class RegistrationPage:
         allure.attach(self.driver.get_screenshot_as_png(), name="Login Email Input", attachment_type=AttachmentType.PNG)
 
     @allure.step("Password input. Password: {1}")
-    def login_email_input(self, password):
+    def login_password_input(self, password):
         self.logger.info("Login Password Input")
         self.driver.find_element(By.ID, LoginPageLocators.input_password_id).send_keys(password)
         self.driver.find_element(By.ID, LoginPageLocators.input_password_id).send_keys(password)
@@ -54,6 +54,20 @@ class RegistrationPage:
         allure.attach(self.driver.get_screenshot_as_png(), name="Forgot password submit form",
                       attachment_type=AttachmentType.PNG)
 
+    @allure.step("Forgot password confirmation message")
+    def forget_password_return_message(self):
+        self.logger.info("Forgot password confirmation message")
+        return_info = self.driver.find_element(By.XPATH, LoginPageLocators.forgot_password_info_xpath)
+        allure.attach(self.driver.get_screenshot_as_png(), name="return info forgot password",
+                      attachment_type=AttachmentType.PNG)
+        return return_info
 
+    @allure.step("Login catch error")
+    def return_login_error(self):
+        self.logger.info("Login - catch error list")
+        error_list = self.driver.find_element(By.XPATH, LoginPageLocators.error_list_xpath).text
+        allure.attach(self.driver.get_screenshot_as_png(), name="Login Error",
+                      attachment_type=AttachmentType.PNG)
+        return error_list
 
 
