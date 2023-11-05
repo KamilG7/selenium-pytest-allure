@@ -29,3 +29,14 @@ class LoginPageLocators:
     forgot_password_info_xpath = "//h2[@class='password-reset__heading']"
     forgot_password_submit_name = "commit"
     error_list_xpath = "//li[@class='form-error__list-item']"
+
+class ProfessionalServicesLocators:
+
+    contact_name_id = "wpforms-217788-field_0"
+    contact_email_id = "wpforms-217788-field_1"
+    job_tittle_id = 'wpforms-217788-field_4'
+    company_name_id = "wpforms-217788-field_3"
+    message_input_id = "wpforms-217788-field_2"
+    captcha_id = "recaptcha-anchor"
+    send_message_button_id = "wpforms-submit-217788"
+    confirmation_message_xpath = '//div[@class="et-pb-contact-message"]/p'
