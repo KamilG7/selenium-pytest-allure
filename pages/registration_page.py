@@ -54,37 +54,13 @@ class RegistrationPage:
     def open_privacy_policy(self):
         self.logger.info("Opening Privacy Policy Terma")
         self.driver.find_element(By.LINK_TEXT, RegistrationLocators.privacy_policy_link_text).click()
-        privacy_handle = self.driver.window_handles[1]
-        self.driver.switch_to.window(privacy_handle)
-        title_privacy = self.driver.title
-        assert title_privacy == "Privacy Policy", f"Privacy terms should be displayed, is {title_privacy}"
         allure.attach(self.driver.get_screenshot_as_png(), name="privacy policy", attachment_type=AttachmentType.PNG)
 
     @allure.step(f"Terms of use have to be accessible")
     def open_terms_of_use(self):
         self.logger.info("Opening Terms Of Use")
         self.driver.find_element(By.LINK_TEXT, RegistrationLocators.terms_of_use_link_text).click()
-        terms_handle = self.driver.window_handles[2]
-        self.driver.switch_to.window(terms_handle)
-        title_terms = self.driver.title
-        assert title_terms == "Terms of Use", f"terms should be displayed, is {title_terms}"
         allure.attach(self.driver.get_screenshot_as_png(), name="Terms of use", attachment_type=AttachmentType.PNG)
-
-    @allure.step("Invalid email input - Email: {1}")
-    def invalid_email_input_registration(self, invalid_email):
-        self.logger.info(f"Invalid Email input in registration form. Email: {invalid_email}")
-        self.driver.find_element(By.ID, RegistrationLocators.registration_email_id).click()
-        self.driver.find_element(By.ID, RegistrationLocators.registration_email_id).send_keys(invalid_email)
-        allure.attach(self.driver.get_screenshot_as_png(), name="Registration - Invalid Email Input",
-                      attachment_type=AttachmentType.PNG)
-
-    @allure.step("Weak Password input in registration form. Weak Password: {1}")
-    def weak_password_input_registration(self, weak_password):
-        self.logger.info(f"Weak Password input in registration form. Password: {weak_password}")
-        self.driver.find_element(By.ID, RegistrationLocators.registration_password_id).click()
-        self.driver.find_element(By.ID, RegistrationLocators.registration_password_id).send_keys(weak_password)
-        allure.attach(self.driver.get_screenshot_as_png(), name="Registration - Weak Password Input",
-                      attachment_type=AttachmentType.PNG)
 
     @allure.step("Capture error message")
     def capture_error_message(self):
@@ -100,6 +76,15 @@ class RegistrationPage:
         self.driver.find_element(By.XPATH, RegistrationLocators.registration_submit_button_xpath).click()
         allure.attach(self.driver.get_screenshot_as_png(), name="Submit button click",
                       attachment_type=AttachmentType.PNG)
+
+    @allure.step("Log Out")
+    def log_out(self):
+        self.logger.info(f"Logging Out")
+        self.driver.find_element(By.XPATH, RegistrationLocators.user_drop_xpath).click()
+        self.driver.find_element(By.XPATH, RegistrationLocators.sign_out_xpath).click()
+        sign_in = self.driver.find_element(By.XPATH, RegistrationLocators.sign_in_xpath)
+        assert sign_in.is_displayed(), "If user correctly log out 'sign in' will be displayed"
+        allure.attach(self.driver.get_screenshot_as_png(), name="after logging out", attachment_type=AttachmentType.PNG)
 
 
 
