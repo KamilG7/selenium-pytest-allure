@@ -1,6 +1,5 @@
 class RegistrationLocators:
 
-
     registration_name_id = "user[first_name]"
     registration_surname_id = "user[last_name]"
     registration_email_id = "user[email]"
@@ -19,6 +18,7 @@ class MainSiteLocators:
 
     main_site_header_xpath = "//input[@class='et_pb_s']"
 
+
 class LoginPageLocators:
 
     input_email_id = "user[email]"
@@ -29,6 +29,7 @@ class LoginPageLocators:
     forgot_password_info_xpath = "//h2[@class='password-reset__heading']"
     forgot_password_submit_name = "commit"
     error_list_xpath = "//li[@class='form-error__list-item']"
+
 
 class ProfessionalServicesLocators:
 
