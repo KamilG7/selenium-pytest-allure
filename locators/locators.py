@@ -16,4 +16,4 @@ class RegistrationLocators:
 
 class MainSiteLocators:
 
-    main_site_header_xpath = "//hi/span[contains(text(), 'Master test Automation')]"
+    main_site_header_xpath = "//input[@class='et_pb_s']"

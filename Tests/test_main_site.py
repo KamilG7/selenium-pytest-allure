@@ -9,7 +9,7 @@ class TestMainSite:
 
     @allure.title("Id 1001")
     @allure.description("Checking if main page loads")
-    def check_if_page_loads(self, setup):
+    def test_if_page_loads(self, setup):
         self.driver.get("https://ultimateqa.com/")
         main_site_page = MainSitePage(self.driver)
         main_site_page.check_main_site_loaded()

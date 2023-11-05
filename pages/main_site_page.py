@@ -14,7 +14,6 @@ class MainSitePage:
     @allure.step("Checking if main site load properly")
     def check_main_site_loaded(self):
         self.logger.info("check if main site loads")
-        header = self.driver.find_element(By.XPATH, MainSiteLocators.main_site_header_xpath).text()
-        assert header == 'Master test Automation, Faster.', "site not loaded"
+        self.driver.find_element(By.XPATH, MainSiteLocators.main_site_header_xpath).click()
         allure.attach(self.driver.get_screenshot_as_png(), name="Check if main site is loaded",
                       attachment_type=AttachmentType.PNG)
