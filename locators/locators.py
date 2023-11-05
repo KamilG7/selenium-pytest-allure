@@ -14,6 +14,17 @@ class RegistrationLocators:
     sign_out_xpath = "//a[contains(text(), 'Sign Out')]"
     sign_in_xpath = "//a[contains(text(), 'Sign In')]"
 
+
 class MainSiteLocators:
 
     main_site_header_xpath = "//input[@class='et_pb_s']"
+
+class LoginPageLocators:
+
+    input_email_id = "user[email]"
+    input_password_id = "user[password]"
+    login_button_xpath = "//button[contains(text(), 'Sign in')]"
+    forgot_password_xpath = "//a[contains(text(), 'Forgot Password')]"
+    forgot_password_email_id = "user[email]"
+    forgot_password_info_xpath = "//h2[@class='password-reset__heading']"
+    forgot_password_submit_name = "commit"
