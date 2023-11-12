@@ -2,7 +2,7 @@ import pytest
 import allure
 from allure_commons.types import AttachmentType
 from pages.login_page import LoginPage
-from Tests.test_registration import email, password
+from tests.test_registration import email, password
 from pages.registration_page import RegistrationPage
 
 
