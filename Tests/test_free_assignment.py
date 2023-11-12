@@ -3,6 +3,7 @@ import allure
 from pages.professional_services_page import ProfessionalServices
 
 
+
 @pytest.mark.usefixtures("setup")
 class TestAutomation:
 
