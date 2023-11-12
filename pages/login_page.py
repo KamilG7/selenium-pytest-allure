@@ -14,21 +14,21 @@ class LoginPage:
     @allure.step("Email input. Email: {1}")
     def login_email_input(self, email):
         self.logger.info("Login Email Input")
-        self.driver.find_element(By.XPATH, LoginPageLocators.login_button_xpath).click()
-        self.driver.find_element(By.XPATH, LoginPageLocators.login_button_xpath).send_keys(email)
+        self.driver.find_element(By.ID, LoginPageLocators.input_email_id).click()
+        self.driver.find_element(By.ID, LoginPageLocators.input_email_id).send_keys(email)
         allure.attach(self.driver.get_screenshot_as_png(), name="Login Email Input", attachment_type=AttachmentType.PNG)
 
     @allure.step("Password input. Password: {1}")
     def login_password_input(self, password):
         self.logger.info("Login Password Input")
-        self.driver.find_element(By.ID, LoginPageLocators.input_password_id).send_keys(password)
+        self.driver.find_element(By.ID, LoginPageLocators.input_password_id).click()
         self.driver.find_element(By.ID, LoginPageLocators.input_password_id).send_keys(password)
         allure.attach(self.driver.get_screenshot_as_png(), name="Login Password Input",
                       attachment_type=AttachmentType.PNG)
 
     @allure.step("Login Submit Button click")
     def login_submit_button(self):
-        self.logger.info("Login Password Input")
+        self.logger.info("Sending Login Form")
         self.driver.find_element(By.XPATH, LoginPageLocators.login_button_xpath).click()
         allure.attach(self.driver.get_screenshot_as_png(), name="Sending form",
                       attachment_type=AttachmentType.PNG)

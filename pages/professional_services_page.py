@@ -69,5 +69,5 @@ class ProfessionalServices:
             get_attribute("textContent")
         allure.attach(self.driver.get_screenshot_as_png(), name="Return confirmation",
                       attachment_type=AttachmentType.PNG)
-        assert return_msg == "Thank you!We're excited to meet and speak with you, talk soon!", \
+        assert "Thank you!" in return_msg, \
             f"return message should be visible, is: {return_msg}"

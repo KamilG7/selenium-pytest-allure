@@ -40,4 +40,4 @@ class ProfessionalServicesLocators:
     message_input_id = "wpforms-217788-field_2"
     captcha_id = "recaptcha-anchor"
     send_message_button_id = "wpforms-submit-217788"
-    confirmation_message_xpath = '//div[@class="et-pb-contact-message"]/p'
+    confirmation_message_xpath = '//div[@class="wpforms-confirmation-container-full wpforms-confirmation-scroll"]/p'

@@ -2,14 +2,9 @@ import pytest
 import allure
 from allure_commons.types import AttachmentType
 from pages.registration_page import RegistrationPage
-import random
+from data.Variables import *
 
-first_name = "Zbigniew"
-last_name = "Brzeczyszczykiewicz"
-email = "xxx997@gmail.com"
-password = "StrongPassword123"
-incorrect_email = "xxx.com"
-weak_password = "xxx"
+
 
 @pytest.mark.usefixtures("setup")
 class TestRegistration:

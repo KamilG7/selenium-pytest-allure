@@ -1,6 +1,7 @@
 import pytest
 import allure
 from pages.professional_services_page import ProfessionalServices
+from data.Variables import *
 
 
 
@@ -13,8 +14,8 @@ class TestAutomation:
 
         self.driver.get("https://ultimateqa.com/consulting/")
         professional_services = ProfessionalServices(self.driver)
-        professional_services.input_name_message("Kamil")
-        professional_services.input_email_message("xxx2@gmail.com")
+        professional_services.input_name_message(first_name)
+        professional_services.input_email_message(email)
         professional_services.input_job_tittle("Someone Important")
         professional_services.input_company_message("Test Corp")
         professional_services.input_message("Test message with length of 30")

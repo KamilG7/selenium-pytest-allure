@@ -4,6 +4,7 @@ from allure_commons.types import AttachmentType
 from pages.login_page import LoginPage
 from tests.test_registration import email, password
 from pages.registration_page import RegistrationPage
+from data.Variables import *
 
 
 
@@ -24,7 +25,7 @@ class TestMainSite:
 
     @allure.title("Id 1014")
     @allure.description("Login should fail with empty form")
-    def test_correct_login(self, setup):
+    def test_failed_login(self, setup):
         self.driver.get("https://courses.ultimateqa.com/users/sign_in")
         login_page = LoginPage(self.driver)
         login_page.login_submit_button()
@@ -34,7 +35,7 @@ class TestMainSite:
 
     @allure.title("Id 1015")
     @allure.description("Forgot password option should work. Email: {1}")
-    def test_correct_login(self, setup):
+    def test_forgot_password(self, setup):
         self.driver.get("https://courses.ultimateqa.com/users/sign_in")
         login_page = LoginPage(self.driver)
         login_page.forget_password_button()
